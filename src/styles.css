@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+html body {
+  background-color: #222121;
+}
+
+/* Ejemplo de uso de la fuente */
+.fuente-1 {
+  color: rgb(144, 49, 171);
+}
