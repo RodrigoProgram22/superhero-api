@@ -1,0 +1,52 @@
+<header>
+  <h1 class="mt-3 text-center fuente-1">¿QUIÉN GANA?</h1>
+  <p class="text-center text-light fuente-1 text-p mx-1">
+    Elije quién crees que ganará en una batalla de SuperHeroes.
+  </p>
+</header>
+<div class="d-flex justify-content-center fuente-1">
+  <div class="card mx-3 my-3" *ngIf="superheroe1" tabindex="0">
+    <div class="card-body text-light">
+      <img
+        *ngIf="superheroe1.image?.url"
+        [src]="superheroe1.image.url"
+        alt="{{ superheroe1.name }}"
+        class="card-img-top img-poke mx-auto"
+        alt="{{ superheroe1.name }}"
+      />
+      <h2 class="text-center mb-3">
+        {{ superheroe1.name }}
+      </h2>
+      <p>Detalles:</p>
+      <ul>
+        <li>
+          {{ superheroe1.biography.publisher }}
+        </li>
+        <li>Raza: {{ superheroe1.appearance.race }}</li>
+        <li>Género: {{ superheroe1.appearance.gender }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card mx-3 my-3" *ngIf="superheroe2" tabindex="0">
+    <div class="card-body text-light">
+      <img
+        *ngIf="superheroe2.image?.url"
+        [src]="superheroe2.image.url"
+        alt="{{ superheroe2.name }}"
+        class="card-img-top img-poke mx-auto"
+        alt="{{ superheroe2.name }}"
+      />
+      <h2 class="text-center mb-3">
+        {{ superheroe2.name }}
+      </h2>
+      <p>Detalles:</p>
+      <ul>
+        <li>
+          {{ superheroe2.biography.publisher }}
+        </li>
+        <li>Raza: {{ superheroe2.appearance.race }}</li>
+        <li>Género: {{ superheroe2.appearance.gender }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
