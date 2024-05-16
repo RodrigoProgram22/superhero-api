@@ -1,8 +1,10 @@
 html body {
   background-color: #222121;
 }
-
+:root {
+  --color-primario:  rgb(144, 49, 171);
+}
 /* Ejemplo de uso de la fuente */
 .fuente-1 {
-  color: rgb(144, 49, 171);
+  color: var(--color-primario);
 }

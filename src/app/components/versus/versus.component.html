@@ -3,9 +3,52 @@
   <p class="text-center text-light fuente-1 text-p mx-1">
     Elije quién crees que ganará en una batalla de SuperHeroes.
   </p>
+  <div class="d-flex justify-content-center text-light fuente-1 text-p mx-1" *ngIf="racha>0">
+    <img src="../../../assets/fire.gif" class="gif" alt="fuego" />
+    <p class="aling-items-center my-auto mx-2">Nivel de Racha : {{ racha }}</p>
+    <img src="../../../assets/fire.gif" class="gif" alt="fuego" />
+  </div>
 </header>
 <div class="d-flex justify-content-center fuente-1">
-  <div class="card mx-3 my-3" *ngIf="superheroe1" tabindex="0">
+  <div
+    class="card mx-3 my-3"
+    *ngIf="superheroe1"
+    tabindex="0"
+    (click)="select(superheroe1.name)"
+  >
+    <div
+      class="barra"
+      [class.active]="barAnimationActive"
+      [style.background-color]="
+        superHeroGanador === undefined
+          ? '#676061'
+          : superHeroGanador
+          ? '#43dc35'
+          : '#dc3545'
+      "
+    >
+      <p
+        class="text-light text-center mt-3"
+        *ngIf="barAnimationActive && superHeroGanador"
+      >
+        Victoria
+      </p>
+      <p
+        class="text-light text-center mt-3"
+        *ngIf="barAnimationActive && superHeroGanador === false"
+      >
+        Derrota
+      </p>
+      <p
+        class="text-light text-center mt-3"
+        *ngIf="barAnimationActive && superHeroGanador === undefined"
+      >
+        Empate
+      </p>
+      <p class="text-light text-center mt-3" *ngIf="barAnimationActive">
+        Nivel de poder: {{ superheroe1.powerstats.power }}
+      </p>
+    </div>
     <div class="card-body text-light">
       <img
         *ngIf="superheroe1.image?.url"
@@ -20,14 +63,52 @@
       <p>Detalles:</p>
       <ul>
         <li>
-          {{ superheroe1.biography.publisher }}
+          {{ superheroe1.biography?.publisher }}
         </li>
-        <li>Raza: {{ superheroe1.appearance.race }}</li>
-        <li>Género: {{ superheroe1.appearance.gender }}</li>
+        <li>Raza: {{ superheroe1.appearance?.race }}</li>
+        <li>Género: {{ superheroe1.appearance?.gender }}</li>
       </ul>
     </div>
   </div>
-  <div class="card mx-3 my-3" *ngIf="superheroe2" tabindex="0">
+  <div
+    class="card mx-3 my-3"
+    *ngIf="superheroe2"
+    tabindex="0"
+    (click)="select(superheroe2.name)"
+  >
+    <div
+      class="barra"
+      [class.active]="barAnimationActive"
+      [style.background-color]="
+        superHeroGanador === undefined
+          ? '#676061'
+          : !superHeroGanador
+          ? '#43dc35'
+          : '#dc3545'
+      "
+    >
+      <p
+        class="text-light text-center mt-3"
+        *ngIf="barAnimationActive && superHeroGanador === false"
+      >
+        Victoria
+      </p>
+      <p
+        class="text-light text-center mt-3"
+        *ngIf="barAnimationActive && superHeroGanador"
+      >
+        Derrota
+      </p>
+      <p
+        class="text-light text-center mt-3"
+        *ngIf="barAnimationActive && superHeroGanador === undefined"
+      >
+        Empate
+      </p>
+      <p class="text-light text-center mt-3" *ngIf="barAnimationActive">
+        Nivel de poder: {{ superheroe2.powerstats.power }}
+      </p>
+    </div>
     <div class="card-body text-light">
       <img
         *ngIf="superheroe2.image?.url"
@@ -42,11 +123,17 @@
       <p>Detalles:</p>
       <ul>
         <li>
-          {{ superheroe2.biography.publisher }}
+          {{ superheroe2.biography?.publisher }}
         </li>
-        <li>Raza: {{ superheroe2.appearance.race }}</li>
-        <li>Género: {{ superheroe2.appearance.gender }}</li>
+        <li>Raza: {{ superheroe2.appearance?.race }}</li>
+        <li>Género: {{ superheroe2.appearance?.gender }}</li>
       </ul>
     </div>
   </div>
+</div>
+<div class="text-center my-4">
+  <p class="text-center fuente-1 text-p" *ngIf="alertaPokemonSelect">
+    Selecciona un SuperHeroe
+  </p>
+  <button class="button" (click)="batalla()">Batalla</button>
 </div>
