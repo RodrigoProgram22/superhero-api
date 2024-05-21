@@ -1,8 +1,11 @@
-h1 {
+/* h1 {
   font-size: 22px;
-}
+} */
 .text-p {
   font-size: 10px;
+}
+.text-title {
+  font-size: 30px;
 }
 .card {
   width: 240px;
@@ -14,9 +17,6 @@ h1 {
   border: 2px solid rgba(0, 0, 0, 0.18);
   transition: border 0.5s;
   cursor: pointer;
-}
-h2 {
-  font-size: 15px;
 }
 .card:hover {
   border: rgb(150, 72, 171) solid;

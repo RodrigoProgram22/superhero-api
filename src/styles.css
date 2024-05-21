@@ -5,6 +5,10 @@ html body {
   --color-primario:  rgb(144, 49, 171);
 }
 /* Ejemplo de uso de la fuente */
+
 .fuente-1 {
+  font-family: "Teachers", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   color: var(--color-primario);
 }

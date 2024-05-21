@@ -1,9 +1,9 @@
 <header>
   <h1 class="mt-3 text-center fuente-1">¿QUIÉN GANA?</h1>
-  <p class="text-center text-light fuente-1 text-p mx-1">
+  <h2 class="text-center text-light fuente-1 mx-1">
     Elije quién crees que ganará en una batalla de SuperHeroes.
-  </p>
-  <div class="d-flex justify-content-center text-light fuente-1 text-p mx-1" *ngIf="racha>0">
+  </h2>
+  <div class="d-flex justify-content-center text-light fuente-1 mx-1" *ngIf="racha>0">
     <img src="../../../assets/fire.gif" class="gif" alt="fuego" />
     <p class="aling-items-center my-auto mx-2">Nivel de Racha : {{ racha }}</p>
     <img src="../../../assets/fire.gif" class="gif" alt="fuego" />
@@ -28,26 +28,26 @@
       "
     >
       <p
-        class="text-light text-center mt-3"
+        class="text-light text-center mt-3 text-title"
         *ngIf="barAnimationActive && superHeroGanador"
       >
         Victoria
       </p>
       <p
-        class="text-light text-center mt-3"
+        class="text-light text-center mt-3 text-title"
         *ngIf="barAnimationActive && superHeroGanador === false"
       >
         Derrota
       </p>
       <p
-        class="text-light text-center mt-3"
+        class="text-light text-center mt-3 text-title"
         *ngIf="barAnimationActive && superHeroGanador === undefined"
       >
         Empate
       </p>
-      <p class="text-light text-center mt-3" *ngIf="barAnimationActive">
+      <h5 class="text-light text-center mt-3" *ngIf="barAnimationActive">
         Nivel de poder: {{ superheroe1.powerstats.power }}
-      </p>
+      </h5>
     </div>
     <div class="card-body text-light">
       <img
@@ -57,10 +57,10 @@
         class="card-img-top img-poke mx-auto"
         alt="{{ superheroe1.name }}"
       />
-      <h2 class="text-center mb-3">
+      <h1 class="text-center my-3 text-title">
         {{ superheroe1.name }}
-      </h2>
-      <p>Detalles:</p>
+      </h1>
+      <h5>Detalles:</h5>
       <ul>
         <li>
           {{ superheroe1.biography?.publisher }}
@@ -88,26 +88,26 @@
       "
     >
       <p
-        class="text-light text-center mt-3"
+        class="text-light text-center mt-3 text-title"
         *ngIf="barAnimationActive && superHeroGanador === false"
       >
         Victoria
       </p>
       <p
-        class="text-light text-center mt-3"
+        class="text-light text-center mt-3 text-title"
         *ngIf="barAnimationActive && superHeroGanador"
       >
         Derrota
       </p>
       <p
-        class="text-light text-center mt-3"
+        class="text-light text-center mt-3 text-title"
         *ngIf="barAnimationActive && superHeroGanador === undefined"
       >
         Empate
       </p>
-      <p class="text-light text-center mt-3" *ngIf="barAnimationActive">
+      <h5 class="text-light text-center mt-3" *ngIf="barAnimationActive">
         Nivel de poder: {{ superheroe2.powerstats.power }}
-      </p>
+      </h5>
     </div>
     <div class="card-body text-light">
       <img
@@ -117,10 +117,10 @@
         class="card-img-top img-poke mx-auto"
         alt="{{ superheroe2.name }}"
       />
-      <h2 class="text-center mb-3">
+      <h1 class="text-center text-title my-3">
         {{ superheroe2.name }}
-      </h2>
-      <p>Detalles:</p>
+      </h1>
+      <h5>Detalles:</h5>
       <ul>
         <li>
           {{ superheroe2.biography?.publisher }}
@@ -132,8 +132,11 @@
   </div>
 </div>
 <div class="text-center my-4">
-  <p class="text-center fuente-1 text-p" *ngIf="alertaPokemonSelect">
+  <p class="text-center fuente-1" *ngIf="alertaPokemonSelect">
     Selecciona un SuperHeroe
   </p>
-  <button class="button" (click)="batalla()">Batalla</button>
+  <button class="button fuente-1" (click)="batalla()">Batalla</button>
 </div>
+
+
+<!-- Mejorar diseño y letras -->

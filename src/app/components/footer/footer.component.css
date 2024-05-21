@@ -1,6 +1,10 @@
 .icon {
     font-size: 20px;
     color: white;
+    transition: 0.3s;
+}
+a :hover{
+    color: var(--color-primario);
 }
 a{
     color: white;
