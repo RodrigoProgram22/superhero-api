@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { VersusComponent } from './components/versus/versus.component';
 import { HomeComponent } from './components/home/home.component';
+import { QuePrefieresComponent } from './components/que-prefieres/que-prefieres.component';
 @NgModule({
-  declarations: [AppComponent, FooterComponent, VersusComponent, HomeComponent],
+  declarations: [AppComponent, FooterComponent, VersusComponent, HomeComponent, QuePrefieresComponent],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
