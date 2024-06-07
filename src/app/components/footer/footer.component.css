@@ -1,12 +1,17 @@
 .icon {
-    font-size: 20px;
-    color: white;
-    transition: 0.3s;
+  font-size: 20px;
+  color: white;
+  transition: 0.3s;
 }
-a :hover{
+.icon:hover{
+    font-size: 21px;
     color: var(--color-primario);
+  }
+a {
+  color: white;
+  text-decoration: none;
+  transition: 0.6s;
 }
-a{
-    color: white;
-    text-decoration: none;
+a:hover {
+  color: var(--color-primario);
 }

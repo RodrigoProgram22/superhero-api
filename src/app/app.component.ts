@@ -11,6 +11,7 @@ export class AppComponent {
   activeInicio: boolean = true;
   activeVersus : boolean = false;
   activeQuePrefieres : boolean = false;
+  activeVerTodos : boolean = false;
   constructor(private router: Router){}
   ngOnInit() {
 
@@ -21,6 +22,7 @@ export class AppComponent {
         this.activeInicio = currentRoute === '/inicio';
         this.activeVersus = currentRoute === '/versus';
         this.activeQuePrefieres = currentRoute === '/que-prefieres';
+        this.activeVerTodos = currentRoute === '/ver-todos';
       }
     });
   }
